@@ -1,0 +1,25 @@
+<div class="container pt-5 pb-5 ">
+	<div class="row mb-2 justify-content-center">
+		<div class="col-md-11">
+			<p class="display-6 text-center fw-bold mb-5">Orders</p>
+			  
+			  <table class="table table-hover table-striped table-bordered">
+	<tr>
+	 <th>Order By</th> <th>Amount</th> <th>Date</th><th>Status</th><th>Details</th></tr>
+	<tr *ngFor="let d of data"> 
+	
+		<td class="p-3"> {{d.firstName | uppercase}} {{d.lastName | uppercase}} <br>{{d.emailId | uppercase}}   </td>
+		<td class="p-3"> {{d.subtotal + d.charges}} <br>({{d.subtotal | currency : 'INR'}} + {{d.charges | currency : 'INR'}})</td>
+
+		<td class="p-3"> {{d.status}} </td>
+		<td class="p-3"> {{d.date | date}} </td>
+		<td> <a class="btn btn-outline-primary ms-2" [routerLink] ="['/admin/orderdetail', d._id]">Detail </a> </td>
+	
+	</tr>
+</table>
+
+
+
+		</div>
+	</div>
+</div>

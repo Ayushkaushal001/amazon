@@ -1,0 +1,28 @@
+<div class="container pt-5 pb-5 ">
+	<div class="text-end"><a href="/user/addaddress " class="btn btn-warning text-white">Add Address</a></div>
+	<div class="row mb-2 justify-content-center">
+		<div class="col-md-11">
+			<p class="display-6 text-center fw-bold mb-5">Addresses✉️</p>
+			  
+			  <table class="table table-hover table-striped table-bordered">
+	<tr>
+	 <th>Address</th><th>Delete</th><th>Update</th> </tr>
+	<tr *ngFor="let d of data"> 
+		<td class="p-3"> {{d.address }} ,
+		  {{d.area}} ,
+		 {{d.city}}, 
+		 	 {{d.landmark}} ,
+		{{d.pincode}} </td>
+		<td><a class=" btn btn-danger" (click) ="delAddress(d._id)">Delete</a></td>
+		<td> <a class=" btn btn-info" [routerLink] ="['/user/editaddress', d._id]">Edit </a> </td>
+	
+	</tr>
+</table>
+
+
+
+		</div>
+	</div>
+</div>
+
+

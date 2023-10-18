@@ -1,0 +1,50 @@
+.banner{background: url(/assets/xx.jpeg);
+padding: 220px 0px;
+height: 600px;
+background-size: cover;
+background-position: center;
+
+}
+
+
+.ist{
+	background-color: #d3d3d3;
+height: 70vh;
+
+}
+#txt{
+	margin-top: 100px;
+
+
+}
+.img{
+
+	height: 350px;
+	width: 600px;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+
+
+
+
+#read{
+	position: absolute;
+	bottom: 150px;
+	right:85%;
+	transform:translateX(50%);
+	z-index: 999;
+	
+}
+ #collection{
+ 	 font-family: Arial,Helvetica ,sans-serif;
+   font-size: 35px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+    color: darkgray;
+text-align: center;
+  padding: 100px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 1.0); 
+}
+
+

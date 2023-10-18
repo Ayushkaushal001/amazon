@@ -1,0 +1,50 @@
+<div class="container pt-5 pb-5 ">
+	<div class="row mb-2 justify-content-center">
+		<div class="col-md-8">
+			<p class="display-5 text-center fw-bold mb-5"> Item Ordered</p>
+			<table class="table table-hover table-striped table-bordered">
+				<tr>
+					<th>Image</th><th>Item Name</th><th>Quantity</th><th>Price</th><th>Amount</th></tr>
+					<tr *ngFor = "let item of items">
+						<td><img [src] = 'item.image' width="80px" height="70px" ></td>
+					<td >{{item.title}}</td>
+					<td>{{item.quantity}}</td>
+						<td>{{item.price}}</td>
+								<td>{{item.price * item.quantity}}</td>
+				</tr>
+			</table>
+</div>
+<div class="col-md-4">
+		<h3 class=" text-center fw-bold mb-5">Order Summary</h3>
+		<table class="table table-hover table-striped table-bordered">
+       <tr>
+       <th>Order Date</th>
+       <td>{{orderInfo.date}}</td>
+   </tr>
+   <tr>
+   	<th>Sub Total</th>
+       <td>{{orderInfo.subtotal | currency : 'INR'}}</td>
+   </tr>
+   <tr>
+   	<th>Charges</th>
+          <td>{{orderInfo.charges | currency :'INR'}}</td></tr>
+          <tr>
+   	<th>Mode</th>
+          <td>{{orderInfo.mode }}</td></tr>
+          <tr>
+   	<th>Status</th>
+          <td>{{orderInfo.status}}</td></tr>
+
+		</table>
+		<div>
+			<a (click) = "updateStatus('Shipped')" *ngIf = "orderInfo.status == 'Ordered'" class="btn btn-outline-warning">Shipped</a>
+			<a (click) = "updateStatus('Delivered')" *ngIf = "orderInfo.status =='Shipped'" class="btn btn-outline-warning">DElivered</a>
+		</div>
+		<hr> <h3 class= "text-center fw-bold mb-5">Delivary Address</h3> <p>{{address.address }} ,
+{{address.area}} ,
+{{address.city}}, 
+{{address.landmark}} ,
+{{address.pincode}}</p>
+</div>	  
+</div>
+</div>

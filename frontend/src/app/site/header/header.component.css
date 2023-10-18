@@ -1,0 +1,71 @@
+
+	#cart:after {
+  content: ")"
+}
+
+#cart:before {
+  content: "("
+}
+
+#nav{
+	background-color: lightgrey;
+
+}
+.nav-item:hover .nav-link {
+  color: #007bff; /* Change to blue (primary) color */
+  
+}
+
+/* header.component.css */
+.professional-dropdown {
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 5px; /* Add space at the bottom of the text */
+  font-weight: bold; /* Apply a bold font weight */
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #34313F; /* Choose your desired text color */
+}
+
+/* Style for the hover effect (underline) */
+.professional-dropdown::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Height of the underline */
+  background-color: #007bff; /* Blue color */
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: right;
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Apply a different color on hover (if desired) */
+.professional-dropdown:hover {
+  color: #007bff; /* Change the text color on hover */
+}
+
+.professional-dropdown:hover::before {
+  transform: scaleX(1); /* Show the underline on hover */
+  transform-origin: left;
+   transition: transform 0.3s ease;
+}
+
+/* header.component.css */
+.cart-icon {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.cart-icon i {
+  font-size: 40px; /* Adjust the size of the cart icon */
+  color: #007bff; /* Change the color to match your navbar links */
+}
+
+.cart-icon sup {
+  font-size: 18px; /* Adjust the font size of the quantity */
+  margin-top: 5px; /* Add space at the top of the quantity */
+  margin-left: 30px;
+}
+

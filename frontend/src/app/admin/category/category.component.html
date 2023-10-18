@@ -1,0 +1,52 @@
+<div class="container  m-auto  mt-3
+ mb-4 bg-white">
+	<div class="row">
+		<div class="col-md-5 ">
+			<h2 class="text-center"> Add New Category</h2>
+								<hr>
+ <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+<div class="row mb-2">
+	<div class="col-12">
+	<input type="text" class="form-control" placeholder="Title" formControlName = "title">
+	<span class='text-danger' *ngIf="form.controls['title'].touched && form.controls['title'].errors?.['required']">Title required</span>
+</div>
+</div>
+
+<div class="row mb-2">
+	<div class="col-12">
+	<input (change)="onFileSelect($event)" type="file" class="form-control">
+</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<textarea class="form-control" rows="3" formControlName ="description"></textarea>
+	</div>
+</div>
+	
+	<div class="mt-4">
+	<button class=" btn btn-dark text-white" [disabled]="!form.valid" >Save Category</button>
+	</div>
+
+</form>
+<div class="text-success mt-2 text-center fs-5"><p>{{msg}}</p></div>
+		</div>
+
+
+		<div class="col-md-7">
+			<h2 class="text-center"> Category List</h2>
+<table class="table table-hover table-striped table-bordered">
+	<tr>
+  <th></th>
+	 <th>Category</th>
+	 <th> Action</th></tr>
+	 <tr *ngFor="let d of categories"> 
+	 	<td><img [src] ="d.image" width="80px" height="80px"></td>
+		<td class="p-3"> {{d.title | uppercase }}  </td>
+
+		<td><a (click)=delCategory(d._id) class="text-danger"><i class = "icofont-delete" ></i> Delete</a></td>
+</tr>
+</table>
+		</div>
+	</div>
+</div>

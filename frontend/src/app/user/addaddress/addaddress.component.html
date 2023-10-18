@@ -1,0 +1,52 @@
+
+<div class="container  border pt-5 pb-5 shadow">
+
+	<div class="row justify-content-center" >
+		<div class="col-5 p-4">
+			<p class="display-6 text-center">Add Address</p>
+			<form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+	<div class="mb-3">
+		<input type="text" class="form-control" placeholder="Address" formControlName = "address">
+		<span class='text-danger' *ngIf="form.controls['address'].touched && form.controls['address'].errors?.['required']">Address Required</span>
+
+
+	</div>
+	<div class="mb-3">
+		<input type="text" class="form-control" placeholder="Area" formControlName = "area">
+<span class='text-danger' *ngIf="form.controls['area'].touched && form.controls['area'].errors?.['required']">Area Required</span>
+
+	</div>
+<div class="mb-3">
+		<input type="text" class="form-control" placeholder="City" formControlName = "city">
+		<span class='text-danger' *ngIf="form.controls['city'].touched && form.controls['city'].errors?.['required']">City Required</span>
+
+
+	</div>
+	<div class="mb-3">
+		<input type="text" class="form-control" placeholder="Land mark" formControlName = "landmark">
+<span class='text-danger' *ngIf="form.controls['landmark'].touched && form.controls['landmark'].errors?.['required']">Landmark Required</span>
+
+	</div>
+	<div class="mb-3">
+		<input type="text" class="form-control" placeholder="Pincode" formControlName = "pincode">
+		<span class='text-danger' *ngIf="form.controls['pincode'].touched && form.controls['pincode'].errors?.['required']">Pincode Required</span>
+
+	</div>
+	<div class="mb-3">
+	
+
+	</div>
+
+	<div class="mt-2 text-center">
+	<button class="btn btn-warning" [disabled]="!form.valid" >Confirm</button>
+	</div>
+
+			</form>
+					<h4 class="text-warning text-center">{{msg}}</h4>
+		
+		</div>
+	</div>
+</div>
+
+

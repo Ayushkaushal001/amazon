@@ -1,0 +1,35 @@
+<div class="p-3" >
+	<p><a href="/site/home">Return to Home</a></p>
+</div>
+<div class="container pt-5 pb-5 shadow">
+
+	<div class="row justify-content-center" >
+		<div class="col-5 p-4">
+			<p class="display-6 text-center">Reset your password </p>
+			<p>We will email your instuction in</p>
+
+			
+			<form [formGroup] = "form" (ngSubmit)="onSubmit()">
+
+
+
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="Email Address" formControlName = "emailId">
+
+	<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['required']">emailId required</span>
+<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['email']">Enter Valid emailid</span>
+	</div> 
+	
+
+	<div class="mt-2 text-center">
+	<button class="btn btn-dark" [disabled]="!form.valid" >Submit request</button>
+	</div>
+
+
+			</form>
+			<p class="text-center mt-3"> Back to  <a href="/user/login">Sign in</a></p>
+		<h4 class="text-dark text-center">{{msg}}</h4>
+
+		</div>
+	</div>
+</div>

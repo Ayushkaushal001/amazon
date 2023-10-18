@@ -1,0 +1,55 @@
+<div class="p-3" >
+	<a class="btn btn-outline-primary " href="/site/home">Return to Home 🏠</a>
+</div>
+<div class="container  pt-3 pb-3 " >
+
+	<div class="row justify-content-center" >
+		<div class="col-5 p-4  border shadow" id = "register">
+			<u class="mt-4 mb-3 "><p class="display-6 text-center mb-4">Create An Account </p></u>
+			<form [formGroup] = "form" (ngSubmit)="onSubmit()">
+<div class="row mb-3 mt-5">
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="First Name" formControlName = "firstName">
+		<span class='text-danger' *ngIf="form.controls['firstName'].touched && form.controls['firstName'].errors?.['required']">First Name Required</span>
+<span class='text-danger' *ngIf="form.controls['firstName'].touched && form.controls['firstName'].errors?.['pattern']">Enter Valid First Name</span>
+
+	</div>
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="Last Name" formControlName = "lastName">
+
+<span class='text-danger' *ngIf="form.controls['lastName'].touched && form.controls['lastName'].errors?.['pattern']">Enter Valid last Name</span>
+	</div>
+</div>
+<div class="row mb-3">
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="Phone Number" formControlName = "phoneNo">
+	
+	<span class='text-danger' *ngIf="form.controls['phoneNo'].touched && form.controls['phoneNo'].errors?.['required']">phone Number required</span>
+<span class='text-danger' *ngIf="form.controls['phoneNo'].touched && form.controls['phoneNo'].errors?.['pattern']">Enter Valid phone number</span>
+</div>
+
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="Email Address" formControlName = "emailId">
+
+	<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['required']">emailId required</span>
+<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['email']">Enter Valid emailid</span>
+	</div> 
+	<div class="col-12">
+	<input type="password" class="form-control" placeholder="Password" formControlName = "password">
+	
+	<span class='text-danger' *ngIf="form.controls['password'].touched && form.controls['password'].errors?.['required']">Password required</span>
+<span class='text-danger' *ngIf="form.controls['password'].touched && form.controls['password'].errors?.['minlength']"> Minimun 6 char required</span>
+</div>
+</div>
+	<div class="mt-2 text-center">
+	<button class="btn btn-dark" [disabled]="!form.valid" >Create</button>
+	</div>
+
+
+			</form>
+		<h4 class="text-dark text-center">{{msg}}</h4>
+			<p class="text-center mt-3">Have an account ? <a href="/user/login">Sign In</a></p>
+		
+		</div>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+
+<div class="container   pt-5 pb-5  bg-light">
+
+	<div class="row justify-content-center" >
+		<div class="col-5 p-4 shadow " style="border-radius: 20px; ">
+			<p class="display-6 text-center">Update Profile </p>
+			
+			<form [formGroup] = "form" (ngSubmit)="onSubmit()">
+<div class="row mb-3 mt-5">
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="First Name" formControlName = "firstName">
+		<span class='text-danger' *ngIf="form.controls['firstName'].touched && form.controls['firstName'].errors?.['required']">First Name Required</span>
+<span class='text-danger' *ngIf="form.controls['firstName'].touched && form.controls['firstName'].errors?.['pattern']">Enter Valid First Name</span>
+
+	</div>
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="Last Name" formControlName = "lastName">
+
+<span class='text-danger' *ngIf="form.controls['lastName'].touched && form.controls['lastName'].errors?.['pattern']">Enter Valid last Name</span>
+	</div>
+</div>
+<div class="row mb-3">
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="Phone Number" formControlName = "phoneNo">
+	
+	<span class='text-danger' *ngIf="form.controls['phoneNo'].touched && form.controls['phoneNo'].errors?.['required']">phone Number required</span>
+<span class='text-danger' *ngIf="form.controls['phoneNo'].touched && form.controls['phoneNo'].errors?.['pattern']">Enter Valid phone number</span>
+</div>
+
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="Email Address" formControlName = "emailId">
+
+	<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['required']">emailId required</span>
+<span class='text-danger' *ngIf="form.controls['emailId'].touched && form.controls['emailId'].errors?.['email']">Enter Valid emailid</span>
+	</div> 
+	
+</div>
+<div class="row mb-3">
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="gender" formControlName = "gender">
+		
+
+	</div>
+	<div class="col-6">
+		<input type="text" class="form-control" placeholder="DOB" formControlName = "dob">
+
+
+	</div>
+</div>
+<div class="row mb-3">
+	<div class="col-12 mb-3">
+	<input type="text" class="form-control" placeholder="City" formControlName = "city">
+	
+	
+</div>
+	<div class="mt-2 text-center">
+	<button class="btn btn-dark" [disabled]="!form.valid" >Update profile</button>
+	</div>
+
+</div>
+			</form>
+					<h4 class="text-dark text-center">{{msg}}</h4>
+		</div>
+		</div>
+	</div>
+

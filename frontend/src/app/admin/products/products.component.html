@@ -1,0 +1,26 @@
+<div class="container pt-5 pb-5 ">
+	<div class="row mb-2 justify-content-center">
+		<div class="col-md-11 shadow  bg-white">
+			<p class="display-6 text-center fw-bold mb-5 mt-2">Products</p>
+			  
+			  <table class="table table-hover table-striped table-bordered">
+	<tr>
+	 <th>Image</th><th>Title</th> <th>Price</th><th>Mrp</th><th>Description</th> <th>Date</th></tr>
+	<tr *ngFor="let d of data"> 
+		<td class="p-3 "> <img [src] ="d.image " height="50px" width="60px" ></td>
+		<td class="p-3"> {{d.title | uppercase}} </td>
+		<td class="p-3"> {{d.price}} </td>
+		<td class="p-3"> {{d.mrp}} </td>
+		 	<td class="p-3"> {{d.description}} </td>
+		<td class="p-3"> {{d.date | date}} </td>
+		<td><a class="btn btn-outline-danger " (click) ="delproduct(d._id)">Delete</a></td>
+		<td> <a class="btn btn-outline-primary ms-2" [routerLink] ="['/admin/editproduct', d._id]">Edit </a> </td>
+	
+	</tr>
+</table>
+
+
+
+		</div>
+	</div>
+</div>

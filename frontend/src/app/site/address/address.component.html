@@ -1,0 +1,30 @@
+<div class="container pt-5 pb-5 ">
+	<div class="row mb-2 justify-content-center">
+		<div class="col-md-11">
+			<p class="display-6 text-center fw-bold mb-5 text-dark">Choose Address</p>
+		</div>
+	</div>
+	<div class="text-end pe-5"><a href="/user/addaddress " class="btn btn-dark text-white">Add Address</a></div>
+<div class="row">
+	<div class="col-md-4 " *ngFor="let d of data">
+		<div class="border p-5 border-dark shadow text-capitalize pb-3">
+<p>{{d.address }} ,
+{{d.area}} ,
+{{d.city}}, 
+{{d.landmark}} ,
+		{{d.pincode}}</p>
+		<div class="row mt-3">
+			<div class="col-6">
+				<a class=" btn btn-outline-dark" (click) ="selectAddress(d._id)">Select </a>
+			</div>
+			<div class="col-3">
+				<a class=" btn btn-outline-danger" (click) ="delAddress(d._id)">Del</a>
+			</div>
+			<div class="col-3">
+				<a class=" btn btn-outline-info" [routerLink] ="['/user/editaddress', d._id]">Edit </a>
+			</div>
+		</div>	
+		</div>	
+	</div>
+</div>
+</div>

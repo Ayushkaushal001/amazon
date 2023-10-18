@@ -1,0 +1,63 @@
+<div class="container pt-5 pb-5">
+			<h2 class="text-center"> Add New Product</h2>
+ <form [formGroup] = "form" (ngSubmit)="onSubmit()">
+	<div class="row">
+		<div class="col-md-12 mt-3 ">
+			<input type="text" class="form-control" placeholder="Title" formControlName = "title">
+	<span class='text-danger' *ngIf="form.controls['title'].touched && form.controls['title'].errors?.['required']">Title required</span>
+		</div>
+
+		<div class="col-md-4 mt-3 ">
+			<label >Mrp</label>
+			<input type="number" class="form-control"  formControlName = "mrp">
+	<span class='text-danger' *ngIf="form.controls['mrp'].touched && form.controls['mrp'].errors?.['required']">mrp required</span>
+		</div>
+								
+<div class="col-md-4 mt-3 ">
+  <label>Price</label>
+				<input type="number" class="form-control"   label ="price" formControlName = "price">
+	<span class='text-danger' *ngIf="form.controls['price'].touched && form.controls['price'].errors?.['required']">Price required</span>
+		</div>
+
+		<div class="col-md-4 mt-3 ">
+			<label>Image</label>
+						<input (change)="onFileSelect($event)" type="file" class="form-control">
+		</div>
+
+
+		<div class="col-md-6 mt-3 ">
+			<label>SubCategory</label>
+				<select class="form-control" formControlName = "subcategory" >
+			<option *ngFor ="let c of categories" [value] = "c._id">{{c.subcategory}}</option>
+		</select>
+		</div>
+
+<div class=" col-md-6 mt-3">
+		<select class="form-control" formControlName="brand">
+  <option *ngFor="let d of brands" [value]="d._id">{{ d.title }}</option>
+</select>
+</div>
+
+		<div class="col-md-6 mt-3 ">
+			<label>specification</label>
+			<textarea class="form-control" rows="3" formControlName ="spec"></textarea>
+		</div>
+<div class="col-md-6  mt-3 ">
+			<label>features</label>
+			<textarea class="form-control" rows="3" formControlName ="features"></textarea>
+		</div>
+		<div class="col-md-12 mt-3 ">
+			<label>Description</label>
+			<textarea class="form-control" rows="3" formControlName ="description"></textarea>
+		</div>
+		<div class="col-md-12 mt-3 ">
+
+			<button class="btn btn-warning" [disabled]="!form.valid" >Save Product</button>
+
+		</div>
+
+	</div>
+</form>
+<div class="text-success mt-2 text-center fs-5"><p>{{msg}}</p></div>
+</div>
+

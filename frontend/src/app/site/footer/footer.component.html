@@ -1,0 +1,41 @@
+<footer class="bg-dark p-5 text-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<h4>Quick Links</h4>
+				<ul>
+					<li><a href="/site/home">Home</a></li>
+					<li><a href="/site/about">About</a></li>
+					<li><a href="/site/contact">Contact</a></li>
+				</ul>
+			</div>
+
+<div class="col-md-3">
+				<h4>My Account</h4>
+				<ul>
+					<li><a href="/user/registor">Register</a></li>
+					<li><a href="/user/login">Login</a></li>
+					<li><a href="/site/cart">Cart</a></li>
+					<li><a href="/site/order">Order</a></li>
+	           <li><a href="/site/addresses">Address</a></li>
+				</ul>
+			</div>
+
+			<div class="col-md-3">
+				<h4>Products</h4>
+				<ul>
+			       <li *ngFor = "let d of categories"><a class=" text-capitalize " [routerLink] = "['/site/shop/category',d._id,d.title]" >{{d.title}}</a></li>
+				</ul>
+			</div>
+    <div class="col-md-3">
+				<h4>Brands</h4>
+				<ul>
+			      <li *ngFor = "let d of brands"><a class=" text-capitalize " [routerLink] = "['/site/shop/brand',d._id,d.title]" >{{d.title}}</a></li>
+				</ul>
+			</div>
+
+		</div>
+        <hr>
+          <p class="text-center">&copy; 2023 Electromart. All rights reserved.</p>
+	</div>
+</footer>
