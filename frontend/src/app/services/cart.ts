@@ -5,7 +5,7 @@ export interface Cart {
 	image:string;
 	price:string;
 	orderId:string;
-	userId:String;
+	userId:string;
 	productId:string;
 	Quantity:string;
 	response:string;

@@ -19,7 +19,7 @@
 				<input type="number" class="form-control"   label ="price" formControlName = "price">
 	<span class='text-danger' *ngIf="form.controls['price'].touched && form.controls['price'].errors?.['required']">Price required</span>
 		</div>
-
+   <!-- here see -->
 		<div class="col-md-4 mt-3 ">
 			<label>Image</label>
 						<input (change)="onFileSelect($event)" type="file" class="form-control">

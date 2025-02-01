@@ -68,7 +68,7 @@ onFileSelect(event:any){
 
   onSubmit(){
     let category = ""
-    let d = this.form.value;
+    const d = this.form.value;
     if(this.imageSelected){
       console.log(d)
     this.ssrvc.getcategory(d.subcategory).subscribe(res=>{category = res.categoryId
@@ -84,7 +84,7 @@ else {
 console.log(d)
   
   this.ssrvc.getcategory(d.subcategory).subscribe(res=>{category = res.categoryId
-    let data = {title:d.title,category:category , mrp:d.mrp ,price:d.price,subcategory:d.subcategory,description:d.description,spec:d.spec,brand:d.brand,features:d.features}
+    const data = {title:d.title,category:category , mrp:d.mrp ,price:d.price,subcategory:d.subcategory,description:d.description,spec:d.spec,brand:d.brand,features:d.features}
  this.psrvc.updateProductData(this.pId,data ).subscribe(res=>{
   this.msg=res.response;
   if(res.st==1){

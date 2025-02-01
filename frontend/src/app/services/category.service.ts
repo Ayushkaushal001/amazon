@@ -11,12 +11,12 @@ export class CategoryService {
   constructor(private http:HttpClient) {}
 
   getCategory(){
-    return this.http.get<Category>(this .baseurl );
+    return this.http.get<Category>(this.baseurl);
   }
   
     newCategory(title:string,description:string,image:File)
 { 
-  let data = new FormData() 
+  const data = new FormData() 
   data.append('title',title)
   data.append('description' ,description)
   data.append('image' ,image , image.name)
@@ -25,6 +25,6 @@ export class CategoryService {
   delCategory(id:string){
     return this.http.delete<Category>(this .baseurl + "/" +id); 
   }
-
+  
 
 }

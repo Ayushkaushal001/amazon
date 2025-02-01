@@ -12,7 +12,6 @@ subcategory:string;
  brand:string;
  features:string;
 
-
 response: string;
     st:number;
 }

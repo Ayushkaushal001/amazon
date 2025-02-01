@@ -10,13 +10,12 @@ import { PasswordComponent } from './password/password.component';
 import { ResetComponent } from './reset/reset.component';
 import { ForgetComponent } from './forget/forget.component';
 import { AddressesComponent } from './addresses/addresses.component';
-import { AddaddressComponent } from './addaddress/addaddress.component';
 import { EditaddressComponent } from './editaddress/editaddress.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-import { CartComponent } from './cart/cart.component';
+import { AddaddressComponent } from './addaddress/addaddress.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +27,12 @@ import { CartComponent } from './cart/cart.component';
     ResetComponent,
     ForgetComponent,
     AddressesComponent,
-    AddaddressComponent,
     EditaddressComponent,
     OrdersComponent,
     OrderdetailsComponent,
     RegisterComponent,
-    CartComponent
+    AddaddressComponent,
+    
   ],
   imports: [
     CommonModule,

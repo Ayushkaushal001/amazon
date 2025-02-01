@@ -9,7 +9,7 @@
 <div class="col-md-3 pt-5 pb-5" *ngFor = "let d of data">
 <div class="card" >
   <a [routerLink] ="['/site/product',d._id]" class= "text-dark text-decoration-none">
-  <img [src] = "d.image" class="card-img-top w-100" height="250px"  >
+  <img [src] = "d.image" class="card-img-top w-100" height="250px">
   <div class="card-body">
     <h4 class="card-title">{{d.title}}</h4>
     <p class="card-text fs-5 text-muted"> {{d.price | currency :'INR'}} <del  class="text-danger fs-6">{{d.mrp | currency :'INR'}}</del> </p>

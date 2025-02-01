@@ -24,21 +24,24 @@ return this.http.get<User>(this.baseUrl +"/" + id);}
 return this.http.post<User>(this.baseUrl + "/login",data  );}
 
 updateProfile( data:User ,id:any) {
-  return this.http.patch<User>(this.baseUrl +"/"+ id,data);}
+  return this.http.patch<User>(this.baseUrl +"/"+ id,data);
+}
 
 
   changepwd(id:any ,data:User ){
-    return this.http.patch<User>(this.baseUrl + "/pwd/" + id,data);}
-
-  resetPwd(data:any,emailId:string){
-  return this.http.patch<User>(this.baseUrl + "/reset" ,data );
+    return this.http.patch<User>(this.baseUrl + "/pwd/" + id,data);
   }
+
+  
+resetPwd(data:any , emailId:string){
+ return this.http.patch<User>(this.baseUrl + "/reset/" + emailId,data);
+}
 
   forgetPwd(data:any){
     return this.http.post<User>(this.baseUrl  + "/forget" ,data);
   }
   isLogin(){
-    let u = localStorage.getItem('userId')
+    const u = localStorage.getItem('userId')
     return !!u;
     
 }

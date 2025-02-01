@@ -11,7 +11,7 @@ export class UserAuthGuard implements CanActivate {
 
   canActivate()
  {
-   if(!! localStorage.getItem('userId'))
+   if(localStorage.getItem('userId'))
     return true;
   else{
     this.router.navigateByUrl('/user/login');

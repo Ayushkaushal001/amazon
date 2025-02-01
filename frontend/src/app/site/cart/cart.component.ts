@@ -27,7 +27,7 @@ constructor(private srvc: CartService,private route:ActivatedRoute) {
  this.subTotal1 = 0;
 
      this.srvc.getcart(this.userId).subscribe(res => {this.data = res;
-        for( let x of this.data){
+        for( const x of this.data){
       
           this.subTotal += x.quantity* x.price;
            this.subTotal1 += x.quantity* x.mrp;
@@ -56,7 +56,9 @@ this.getcart();
   this.srvc.delItem(id).subscribe(res=>{
     window.alert(res.response);
     if(res.st == 1)
-  this.getcart()
+      console.log(res);
+  this.getcart(); 
+  console.log(this.getcart);
 
   })
  }

@@ -7,14 +7,12 @@ import {Router} from '@angular/router'
   providedIn: 'root'
 })
 
-
-
 export class AdminAuthGuard implements CanActivate {
   constructor (private router : Router) {}
 
   canActivate () {
 
-  	if( !! localStorage.getItem('adminId'))
+  	if( localStorage.getItem('adminId'))
     return true;
 
 else {
@@ -24,7 +22,7 @@ else {
 }
 
 
-}
+ }
 
 
 

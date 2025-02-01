@@ -23,12 +23,12 @@ constructor(private fb: FormBuilder,private srvc:UserService,) {
         city:res.city,
          gender:res.gender,
      })
+    
   })
 this.form = this.fb.group({
 firstName: ['', [Validators.required,Validators.pattern('[A-Za-z]{2,20}')]],
   lastName: ['',Validators.pattern('[A-Za-z]{2,20}')],
   emailId: ['', [Validators.required,Validators.email] ],
- 
   phoneNo: ['', [Validators.required,Validators.pattern('[0-9]{10}')]],
   city: [''],
   dob:[''],

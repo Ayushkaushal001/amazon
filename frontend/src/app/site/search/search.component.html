@@ -1,15 +1,25 @@
-<div class="text-uppercase p-3 text-white bg-primary">Result for {{query}}</div>
+<div class="text-uppercase p-3 text-white bg-primary">Results for "{{ query }}"</div>
+
 <div class="container pt-5 pb-5">
-	<div class="row">
-		<div class="col-md-3 mb-3" *ngFor="let d of data">
-			<div class="card" >
-				<a [routerLink]="['/site/product',d._id]" class="text-dark text-decoration-none">
-        <img [src]="d.image" class="card-img-top" alt="..." height="300px">
-        <div class="card-body">
-        <h5 class="card-title ">{{d.title}}</h5>
-        <p class="card-text fs-5 text-danger">{{d.price | currency :'INR'}} <del class="text-muted fs-6">{{d.mrp | currency :'INR'}}</del></p>
-        </div></a>
+  <div class="row">
+    <div class="col-md-3 mb-3" *ngFor="let d of data">
+      <div class="card h-100">
+        <a [routerLink]="['/site/product', d._id]" class="text-dark text-decoration-none">
+          <img [src]="d.image" class="card-img-top" alt="{{ d.title }}" height="300px">
+          <div class="card-body">
+            <h5 class="card-title">{{ d.title }}</h5>
+            <p class="card-text fs-5 text-danger">
+              {{ d.price | currency :'INR' }}
+              <del class="text-muted fs-6">{{ d.mrp | currency :'INR' }}</del>
+            </p>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
+
+  <!-- If no products are found, display a message -->
+  <div *ngIf="data.length === 0" class="text-center text-muted">
+    <h4>No products found for "{{ query }}"</h4>
+  </div>
 </div>

@@ -24,10 +24,11 @@ this.srvc.loginAdmin(this.form.value).subscribe(res=>{
     if(res.st==1)
    {
     localStorage.setItem("adminId" ,res.adminId);
-    this.router.navigateByUrl("/admin/adminheader")
+    this.router.navigateByUrl("/admin/adminheader");
    }
 })
 }
+
 
 }
 

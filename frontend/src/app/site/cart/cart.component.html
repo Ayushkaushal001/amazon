@@ -1,65 +1,64 @@
-<div class="container pt-5 pb-5 " *ngIf = "subTotal<=0" S>
-	<div class="row mb-2 justify-content-center">
-		<div class="col-md-12 " style="border-radius: 20px;" id ="aa"> 
-	      <a href="/site/home" class="btn btn-danger text-white " id = "bt">Return To Shop </a>
-		</div>
-	</div>
+<div class="container pt-5 pb-5 " *ngIf = "subTotal<=0" >
+  <div class="row mb-2 justify-content-center">
+    <div class="col-md-12 " style="border-radius: 20px;" id ="aa"> 
+        <a href="/site/home" class="btn btn-danger text-white " id = "bt">Return To Shop </a>
+    </div>
+  </div>
 </div>
 <div class="container pt-5 pb-5 " *ngIf = "subTotal>0">
-	<div class="row mb-2 justify-content-center">
-		<div class="col-md-11 " style="border-radius: 20px;">
-			<p class="display-6 text-center fw-bold mb-5 text-dark">My Cart</p>	 
-			  <table class="table table-hover table-striped table-bordered">
-	<tr>
-	 <th>Image</th><th>Title</th> <th>Price</th><th>Quantity</th> <th>Amount</th></tr>
-	<tr *ngFor="let d of data"> 
-		<td class="p-3 "> <img [src] ="d.image " height="80px" width="90px" ></td>
-		<td class="p-3"> {{d.title | uppercase}} </td>
-		<td class="p-3"> <del> {{d.mrp | currency : 'INR'}} </del> {{d.price | currency :'INR'}} </td>
+  <div class="row mb-2 justify-content-center">
+    <div class="col-md-11 " style="border-radius: 20px;">
+      <p class="display-6 text-center fw-bold mb-5 text-dark">My Cart</p>  
+        <table class="table table-hover table-striped table-bordered">
+  <tr>
+   <th>Image</th><th>Title</th> <th>Price</th><th>Quantity</th> <th>Amount</th></tr>
+  <tr *ngFor="let d of data"> 
+    <td class="p-3 "> <img [src] ="d.image " height="80px" width="90px" ></td>
+    <td class="p-3"> {{d.title | uppercase}} </td>
+    <td class="p-3"> <del> {{d.mrp | currency : 'INR'}} </del> {{d.price | currency :'INR'}} </td>
 
-	
+  
 <td><a (click)="onupdate(d._id,'dec',d.quantity)" class="btn bt-light text-danger shadow me-2">-</a>{{d.quantity}}<a (click)="onupdate(d._id,'inc',d.quantity)" class="btn bt-light text-success shadow ms-2 ">+</a></td>
 
 
-		 	<td class="p-3"> {{d.quantity*d.price | currency :'INR'}} </td>
-		<td><a class="btn btn-danger" (click) ="delItem(d._id)">Delete</a></td>
-		
-	
-	</tr>
+      <td class="p-3"> {{d.quantity*d.price | currency :'INR'}} </td>
+    <td><a class="btn btn-danger" (click) ="delItem(d._id)">Delete</a></td>
+    
+  
+  </tr>
 </table>
 
 
-		</div>
+    </div>
 
-	</div>
+  </div>
 
 <div class="row justify-content-end mt-5 " style="margin-right:10px;">
-	<div class="col-md-4">
-		<table class="table table-hover table-striped table-bordered">
-			<tr>
-				<th>Cart SubTotal</th>
-				<td>{{subTotal | currency : 'INR'}}</td>
-			</tr>
-			<tr>
-				<th>You Saved </th>
-				<td><del>{{subTotal1 | currency : 'INR'}}</del>{{Save |  currency : 'INR'}}</td>
-			</tr>
-			<tr>
-				<th>Delivery Charges</th>
-				<td> {{Charges |  currency : 'INR' }}</td>
+  <div class="col-md-4">
+    <table class="table table-hover table-striped table-bordered">
+      <tr>
+        <th>Cart SubTotal</th>
+        <td>{{subTotal | currency : 'INR'}}</td>
+      </tr>
+      <tr>
+        <th>You Saved </th>
+        <td><del>{{subTotal1 | currency : 'INR'}}</del>{{Save |  currency : 'INR'}}</td>
+      </tr>
+      <tr>
+        <th>Delivery Charges</th>
+        <td> {{Charges |  currency : 'INR' }}</td>
 
-			</tr>
-			<tr>
-				<th>Order Total</th>
-				<td>{{Total |  currency : 'INR'}}</td>
-			</tr>
-	</table>
-	<div>
-		<a href="/site/address" class=" mt-2  btn btn btn-dark " id = 'btn'>Proceed To Check Out</a>
-	</div>
+      </tr>
+      <tr>
+        <th>Order Total</th>
+        <td>{{Total |  currency : 'INR'}}</td>
+      </tr>
+  </table>
+  <div>
+    <a href="/site/address" class=" mt-2  btn btn btn-dark " id = 'btn'>Proceed To Check Out</a>
+  </div>
 
-	</div>
+  </div>
 </div>
 
 </div>
-

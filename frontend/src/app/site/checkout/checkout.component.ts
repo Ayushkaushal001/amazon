@@ -26,14 +26,14 @@ data:any
 constructor(private router: Router,private srvc: CartService,private route:ActivatedRoute,private osrvc: OrderService, private asrvc : AddressService , private usrvc : UserService) {
    this.getcart()
    this.usrvc.getUser(this.userId).subscribe(res => {this.user = res});
-  
-  
     this.asrvc.getAddressById(this.addressId).subscribe(res => {this.address = res});
   }
+
+  
   getcart(){
      this.srvc.getcart(this.userId).subscribe(res => {this.data = res;
       console.log(res)
-        for( let x of this.data){
+        for( const x of this.data){
           this.subTotal += x.quantity* x.price;
            this.subTotal1 += x.quantity* x.mrp;
         }
@@ -43,22 +43,29 @@ constructor(private router: Router,private srvc: CartService,private route:Activ
      
    });
   }
-placeOrder(){
-   let data = {emailId:this.user.emailId,firstName:this.user.firstName,
-   lastName:this.user.lastName,addressId:this.addressId,
-userId:this.userId,subtotal:this.subTotal ,charges:this.Charges,
-status:'Ordered',mode:'COD'};
+ 
 
+ placeOrder(){
+   const data = {
+emailId:this.user.emailId,
+firstName:this.user.firstName,
+lastName:this.user.lastName,
+addressId:this.addressId,
+userId:this.userId,
+subtotal:this.subTotal ,
+charges:this.Charges,
+status:'Ordered',mode:'COD'};
+console.log(data);
  this.osrvc.addOrder(data).subscribe(res=>{
 console.log(res)
 if(res.st==1){
-   let data1 ={status:'Ordered',orderId:res.docId}
+   const data1 ={status:'Ordered',orderId:res.docId}
 console.log(data1)
    this.srvc.updateStatus(this.userId,data1).subscribe(res =>{
 console.log(res)
  this.msg = res.response;
  this.router.navigateByUrl('site/confirm')
- console.log(res)  
+ console.log(res) 
    })
 } 
  })

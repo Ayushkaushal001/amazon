@@ -17,7 +17,7 @@ export class BrandService {
   
     newBrand(title:string,description:string,image:File )
 { 
-  let data = new FormData() 
+  const data = new FormData() 
   data.append('title',title)
   data.append('description' ,description)
   data.append('image' ,image , image.name)

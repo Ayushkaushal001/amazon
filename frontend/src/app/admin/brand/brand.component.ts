@@ -42,7 +42,7 @@ onFileSelect(event:any){
    }
 
   onSubmit(){
-    let d = this.form.value
+    const d = this.form.value
  this.srvc.newBrand(d.title,d.description,d.image ).subscribe(res=>{
   this.msg=res.response;
   if(res.st==1){

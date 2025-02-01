@@ -31,6 +31,4 @@ this.srvc.postAddress(data).subscribe(res=>{
     this.form.reset();
 })
 }
-
-
 }

@@ -28,5 +28,9 @@ data: any;
    localStorage.setItem('addressId',id)
   this.router.navigateByUrl('/site/checkout')
  }
- 
+
+
+
 }
+
+

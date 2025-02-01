@@ -13,12 +13,12 @@ import { ShopComponent } from './shop/shop.component';
 import { ProductComponent } from './product/product.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AddressComponent } from './address/address.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { SearchComponent } from './search/search.component';
-
-
+import { QRCodeModule } from 'angularx-qrcode';
+import{SlickCarouselModule} from'ngx-slick-carousel';
 @NgModule({
   declarations: [
     SiteComponent,
@@ -35,12 +35,17 @@ import { SearchComponent } from './search/search.component';
     AddressComponent,
     ConfirmComponent,
     SearchComponent,
+
  
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    SiteRoutingModule
+    SiteRoutingModule,
+    QRCodeModule, 
+    SlickCarouselModule,
+    FormsModule
+
 
   ]
 })

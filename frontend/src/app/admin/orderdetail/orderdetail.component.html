@@ -37,8 +37,8 @@
 
 		</table>
 		<div>
-			<a (click) = "updateStatus('Shipped')" *ngIf = "orderInfo.status == 'Ordered'" class="btn btn-outline-warning">Shipped</a>
-			<a (click) = "updateStatus('Delivered')" *ngIf = "orderInfo.status =='Shipped'" class="btn btn-outline-warning">DElivered</a>
+			<a (click) = "updateStatus('Shipped')" *ngIf = "orderInfo.status === 'Ordered'" class="btn btn-outline-warning">Shipped</a>
+			<a (click) = "updateStatus('Delivered')" *ngIf = "orderInfo.status ==='Shipped'" class="btn btn-outline-warning">DElivered</a>
 		</div>
 		<hr> <h3 class= "text-center fw-bold mb-5">Delivary Address</h3> <p>{{address.address }} ,
 {{address.area}} ,

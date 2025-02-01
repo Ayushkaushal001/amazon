@@ -16,7 +16,7 @@ code: ['', Validators.required],
 cpassword: ['',[Validators.required,Validators.minLength(6)]]
 });
 }
-                                                                                                                          
+
 onSubmit(){
   let code = localStorage.getItem("code");
    let emailId = localStorage.getItem("emailId") || '';
@@ -38,4 +38,3 @@ this.msg = "Code not matched";
 }
 }
 }
-

@@ -1,41 +1,76 @@
-<footer class="bg-dark p-5 text-white">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<h4>Quick Links</h4>
-				<ul>
-					<li><a href="/site/home">Home</a></li>
-					<li><a href="/site/about">About</a></li>
-					<li><a href="/site/contact">Contact</a></li>
-				</ul>
-			</div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    .text-light {
+        color: #fff !important; 
+    }
 
-<div class="col-md-3">
-				<h4>My Account</h4>
-				<ul>
-					<li><a href="/user/registor">Register</a></li>
-					<li><a href="/user/login">Login</a></li>
-					<li><a href="/site/cart">Cart</a></li>
-					<li><a href="/site/order">Order</a></li>
-	           <li><a href="/site/addresses">Address</a></li>
-				</ul>
-			</div>
+    .list-unstyled li a {
+        color: #fff !important; 
+        text-decoration: none !important; 
+    }
+</style>
 
-			<div class="col-md-3">
-				<h4>Products</h4>
-				<ul>
-			       <li *ngFor = "let d of categories"><a class=" text-capitalize " [routerLink] = "['/site/shop/category',d._id,d.title]" >{{d.title}}</a></li>
-				</ul>
-			</div>
-    <div class="col-md-3">
-				<h4>Brands</h4>
-				<ul>
-			      <li *ngFor = "let d of brands"><a class=" text-capitalize " [routerLink] = "['/site/shop/brand',d._id,d.title]" >{{d.title}}</a></li>
-				</ul>
-			</div>
 
-		</div>
+<footer class="bg-dark text-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+              
+                <ul class="list-unstyled">
+                    <li><a href="/site/home" class="fw-bold" style="font-size: 25px; margiu-bottom:">E-COMMERECE </a></li>
+                    <li style="opacity:0.7" class="mt-4">The custmore is atr the heart of our uniique Buisness Model , which Include Design</li>
+
+
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Customer Service</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/site/contact" style="opacity:0.5;">Contact Us</a></li>
+                    <li><a href="/site/home" style="opacity:0.5;">FAQ</a></li>
+                    <li><a href="/site/home" style="opacity:0.5;">Shipping</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>About our Campany</h4>
+                <ul class="list-unstyled">
+                    <li><a href="/site/about" style="opacity:0.5">About Us</a></li>
+                    <li><a href="/site/contact " style="opacity: 0.5;">Contact</a></li>
+                    <li><a href="/site/contact" style="opacity:0.5">Indeed RElations</a></li>
+                </ul>
+            </div>
+        </div>
         <hr>
-          <p class="text-center">&copy; 2023 Electromart. All rights reserved.</p>
-	</div>
+        <div class="row "style = "space">
+            <div class="col-md-12">
+                <a href="#" class="text-light " style="justify-content: space-between;"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-light" style="margin:30px"><i class="fab fa-twitter"></i></a>
+                <a class="text-light"> <i class="fab fa-instagram"></i></a>
+                <div class="float-end " >
+               <qrcode (qrCodeUrl)="onChange($event)" [qrdata]="qrdata" class = "w-auto h-auto" 
+ [allowEmptyString]="true"
+    [ariaLabel]="'Ayush kaushal qrcode'"
+    [cssClass]="'center'"
+    [elementType]="'canvas'"
+    [errorCorrectionLevel]="'M'"
+    [imageSrc]="'./assets/angular-logo.png'"
+    [imageHeight]="30"
+    [imageWidth]="30"
+    [margin]="4"
+    [scale]="1"
+    [title]="'Ayush kaushal'">
+        
+    </qrcode>
+</div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center">&copy; 2023 Your Company. All rights reserved.</p>
+            </div>
+
+        </div>
+    </div>
 </footer>

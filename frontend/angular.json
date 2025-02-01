@@ -25,11 +25,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css","./node_modules/bootstrap/dist/css/bootstrap.min.css", 
-              "node_modules/font-awesome/css/font-awesome.min.css"
-              
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/aos/dist/aos.css", 
+                "node_modules/slick-carousel/slick/slick.css",
+  "node_modules/slick-carousel/slick/slick-theme.css",
             ],
-            "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", 
+               "node_modules/jquery/dist/jquery.min.js",
+  "node_modules/slick-carousel/slick/slick.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -93,11 +100,26 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@jefiozie/ngx-aws-deploy:deploy"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "0668e615-6630-439b-a4a6-3475196c50ad"
+    "analytics": "0668e615-6630-439b-a4a6-3475196c50ad",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

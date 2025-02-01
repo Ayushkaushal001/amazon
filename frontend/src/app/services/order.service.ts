@@ -17,7 +17,7 @@ orders(){
 
 
 
-  getorder(id:String){
+  getorder(id:string){
     return this.http.get<Order>(this.baseurl + "/" +id);
   }
    

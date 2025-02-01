@@ -14,11 +14,13 @@ import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
 import { AdminAuthGuard } from './admin-auth.guard';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: AdminComponent, 
  children:[
  { path: 'users', component: UsersComponent , canActivate :[AdminAuthGuard]},
+
   { path: 'contact', component: ContactComponent , canActivate : [AdminAuthGuard] },
   { path: 'category', component: CategoryComponent , canActivate  : [AdminAuthGuard] },
   { path: 'subcategory', component: SubcategoryComponent, canActivate : [AdminAuthGuard] },

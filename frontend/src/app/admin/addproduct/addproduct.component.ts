@@ -33,7 +33,8 @@ categories:any
     this.ssrvc.getsubcategory().subscribe(res=>this.categories =res)
   }
 
-onFileSelect(event:any){
+onFileSelect(event:any){//for opening file in youtube device 
+  
     const file = (event.target as HTMLInputElement).files?.[0];
     this.form.patchValue({image:file });
     this.form.get('image')?.updateValueAndValidity()
@@ -45,7 +46,7 @@ onFileSelect(event:any){
 
   onSubmit(){
     let category = ""
-    let d = this.form.value
+    const d = this.form.value
     this.ssrvc.getcategory(d.subcategory).subscribe(res=>{category = res.categoryId
  this.psrvc.newProduct(d.title,category,d.mrp,d.image, d.price, d.subcategory, d.description, d.spec,d.brand,d.features).subscribe(res=>{
 
@@ -63,3 +64,6 @@ onFileSelect(event:any){
   }
  
 }
+
+
+// learn subcategory category brand image and onsubmit 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import{BrandService} from '../../services/brand.service'
 import {SubcategoryService} from '../../services/subcategory.service'
 import {CategoryService} from '../../services/category.service'
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent  implements OnInit {
+  searchTerm: string = '';  // Two-way bound search term
 
 
   categories:any
@@ -33,12 +34,16 @@ this.form = this.fb.group({
    this.casrvc.getcart(this.userId).subscribe(res=>{this.cart =res;this.Incart =this.cart.length});
   }
 
-  onSubmit() {
-let url="/site/search/"+this.form.value.query;
-this.router.navigateByUrl(url)
-   
-}
-  isHovered: boolean = false;
+  ngOnInit(): void {}
+
+   onSubmit() {
+    if (this.searchTerm.trim()) {
+      const url = `/site/search/${this.searchTerm}`;
+      this.router.navigateByUrl(url);  // Navigate to the search result page with the query
+    }
+  }
+
+  isHovered = false;
 
   onMouseEnter() {
     this.isHovered = true;

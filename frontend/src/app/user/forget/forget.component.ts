@@ -35,4 +35,3 @@ this.srvc.forgetPwd(data).subscribe(res=>{
 }
 }
 
-

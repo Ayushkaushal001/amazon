@@ -2,8 +2,8 @@ export interface Brand {
 
 _ID:string;
 
-title:String;
-description:String;
+title:string;
+description:string;
 image:string;
 
 response:string;

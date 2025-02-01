@@ -11,7 +11,7 @@ export class FooterComponent {
 categories:any
   brands:any
   subcategories:any
-
+  qrdata = 'https://www.instagram.com/_ayush_kaushal__/'; 
   constructor(private bsrvc: BrandService , private ssrvc:SubcategoryService,private csrvc:CategoryService){
 
     this.bsrvc.getBrand().subscribe(res=>this.brands =res);
@@ -19,4 +19,9 @@ categories:any
     this.csrvc.getCategory().subscribe(res=>this.categories =res);
 
   }
+
+  onChange(Url:any){
+  this.qrdata = Url;
+  window.open(Url, '_blank'); 
 }
+ }

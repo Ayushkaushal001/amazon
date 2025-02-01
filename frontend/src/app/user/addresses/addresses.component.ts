@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {AddressService} from '../../services/address.service'
+import {AddressService} from '../../services/address.service';
 @Component({
   selector: 'app-addresses',
   templateUrl: './addresses.component.html',
@@ -24,5 +24,6 @@ export class AddressesComponent {
   })
  }
 }
+
    
    
